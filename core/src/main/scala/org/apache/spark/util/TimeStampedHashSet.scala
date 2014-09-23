@@ -26,7 +26,7 @@ private[spark] class TimeStampedHashSet[A] extends Set[A] {
   val internalMap = new ConcurrentHashMap[A, Long]()
 
   def contains(key: A): Boolean = {
-    internalMap.contains(key)
+    internalMap.containsKey(key)
   }
 
   def iterator: Iterator[A] = {
